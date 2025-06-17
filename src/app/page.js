@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <h2>ยินดีต้อนรับเข้าสู่เว็บไซต์ของเรา</h2>
-      <Link href="/about">ไปยังหน้าเกี่ยวกับเรา</Link>
+      <Link href="/about">Hello Vercel!</Link>
     </div>
   );
 }
