@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +19,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
+        <header>
+          <div className="container">
+            <h1 style={{ marginBottom: "1rem" }}>My First Next.js App</h1>
+            <nav className="menu">
+              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
+            </nav>
+          </div>
+        </header>
+        <main className="container">{children}</main>
+        <footer style={{ marginTop: "2rem", textAlign: "center" }}>
+          <p>© 2025 My Website</p>
+        </footer>
       </body>
     </html>
   );
